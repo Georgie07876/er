@@ -2,7 +2,7 @@
   <div id="app">
     <!-- HERO -->
     <header class="hero">
-      <div class="logo">BULLMIND 🐂</div>
+      <div class="logo">BullMind</div>
       <h1>BullMind – AI-бот<br />для торговли в лонг</h1>
       <p>Интеллектуальная торговля криптой без лишних действий</p>
       <a href="/download" class="btn">Скачать .exe</a>
@@ -13,7 +13,7 @@
       <h2>О продукте</h2>
       <div class="about-content">
         <div class="about-image">
-          <img src="https://via.placeholder.com/400x250" alt="Скриншот интерфейса" />
+          <img src="/images/5.jpg" alt="Скриншот интерфейса" />
         </div>
         <div class="about-text">
           <p>
@@ -60,10 +60,7 @@
     <section class="screenshots">
       <h2>Скриншоты интерфейса</h2>
       <div class="shots">
-        <img src="" alt="Главный экран" />
-        <img src="" alt="История сделок" />
-        <img src="" alt="Настройки" />
-        <img src="" alt="Демо-режим" />
+        <Screenshots/>
       </div>
     </section>
 
@@ -142,6 +139,11 @@
     </footer>
   </div>
 </template>
+
+<script setup>
+import Screenshots from './componet/Screenshots.vue';
+
+</script>
 
 <style lang="scss">
 @use "sass:color";
@@ -246,11 +248,39 @@ ul.features, ul.why-list {
 
 // ABOUT
 .about .about-content {
-  display: flex; flex-wrap: wrap; gap: 40px; align-items: center; padding-top: 20px;
-  .about-image { flex: 1; min-width: 300px; }
-  .about-text { flex: 1.2; min-width: 300px; .features { list-style: none; padding: 0; margin-top: 20px; li { margin-bottom: 10px; }}}
-}
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: stretch; 
+  padding-top: 20px;
 
+  .about-image, .about-text {
+    flex: 1;
+    min-width: 300px;
+    display: flex;              
+    flex-direction: column;    
+    justify-content: center;
+  }
+
+  .about-image {
+    max-height: none;          
+    img {
+      width: 100%;
+      height: 90%;
+      object-fit: cover;     
+      border-radius: 8px;
+    }
+  }
+
+  .about-text {
+    .features {
+      margin-top: 20px;
+      li {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
 
 .func-item {
   display: flex;
@@ -336,7 +366,7 @@ ul.features, ul.why-list {
 
 // WHY BULLMIND 
 .why .why-content {
-  display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;
+  display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; padding-top: 20px;
   .why-list { list-style: none; padding: 0; flex: 1; min-width: 280px; li { margin-bottom: 15px; font-size: 18px; }}
   .why-text { flex: 1; min-width: 280px; background: $bg-box; padding: 20px; border-radius: 8px; border-left: 3px solid $green; p { margin-bottom: 10px; &:last-child { margin-bottom: 0; }}}
 }

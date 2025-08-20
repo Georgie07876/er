@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/download", (req, res) => {
-    const filePath = path.join(__dirname, "files", "DullMind.exe");
+    const filePath = path.join(__dirname, "files", "BullMind.exe");
     res.download(filePath, "BullMind.exe");
 })
 
