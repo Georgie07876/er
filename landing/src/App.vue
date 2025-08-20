@@ -122,7 +122,7 @@
     <!-- FOOTER -->
     <footer>
       <div class="footer-container">
-        <div class="footer-logo">BULLMIND 🐂</div>
+        <div class="footer-logo">BullMind</div>
         <nav class="footer-nav">
           <a href="#">О продукте</a>
           <a href="#">Поддержка</a>
